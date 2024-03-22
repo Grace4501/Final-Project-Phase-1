@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <head>
+        <h1>LOGIN</h1>
+    </head>
+    <main>
+        <form id="coworker">
+            <h3>LOGIN AS CO-WORKER</h3>
+            
+            <h3>USERNAME</h3>
+            <input type="text" id="usernameWorker" >
+            <h3>PASSWORD</h3>
+            <input type="text" id="passwordWorker" >
+            <h5 id="checkWorker"></h5>
+
+
+            <a href="forgotPass.html"><h5>Forgot Password?</h2></a>
+
+            <input type="submit" onclick="loginWorker()" placeholder="Sign In">
+            <a href="createAccount.html"><h4>Create Account</h4></a>
+        </form>
+        
+        <form id="owner">
+            <h3>LOGIN AS OWNER</h3>
+            
+            <h3>USERNAME</h3>
+            <input type="text" id="usernameOwner" >
+            <h3>PASSWORD</h3>
+            <input type="text" id="passwordOwner" >
+            <h5 id="checkOwner"></h5>
+
+            <a href="forgotPass.html"><h5>Forgot Password?</h2></a>
+
+            <input type="submit" placeholder="Sign In">
+            <a href="createAccount.html"><h4>Create Account</h4></a>
+        </form>
+    </main>
+
+    <script src="loginPage.js"></script>
+</body>
+</html>
