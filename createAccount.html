@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Create an Account Page</title>
 </head>
 <body>
-    
+    <head>
+        <h1>CREATE AN ACCOUNT</h1>
+    </head>
+    <main>
+        <label>NAME</label>
+        <input type="text" id="name">
+        <br>
+        <label>ADDRESS</label>
+        <input type="text" id="address">
+        <br>
+        <label>EMAIL</label>
+        <input type="text" id="email">
+        <br>
+        <label>CONTACT NUMBER</label>
+        <input type="text" id="contact">
+        <br>
+        <br>
+        <label>USERNAME</label>
+        <input type="text" id="username">
+        <br>
+        <label>PASSWORD</label>
+        <input type="text" id="password">
+        <br>
+        <br>
+        <section>
+        <div>
+            <label>Co-worker</label>
+            <input type="radio" id="worker" name="userType">
+            <br>
+            <label>Owner</label>
+            <input type="radio" id="owner" name="userType">
+        </div>
+        <br>
+        <h3 id="verfication"></h3>
+        <br>
+        <input type="submit" onclick="checkUser()">
+
+        <a href="index.html"><h4>Return to Login Page</h4></a>
+
+    </main>
+    <script src="loginPage.js"></script>
 </body>
 </html>
