@@ -91,29 +91,52 @@ function saveArray() {
 
     //Create account
 
-    function checkUser() {
+    function checkUser() 
+    {
         var workerType = document.getElementById("worker");
         var ownerType = document.getElementById("owner");
         var verfi = document.getElementById("verfication")
-    
-        if(workerType.checked === true)
+
+        const password = document.getElementById("password").value;
+        
+        //checking if password is in use
+        const isPasswordUsed = ownerUsers.some(user => user.password === password) || workerUsers.some(user => user.password === password);
+        
+        //checking if it matches the requirements
+        const isValidPassword = password.length > 5 && /\d/.test(password);
+        
+        if(isPasswordUsed)
         {
-            const newUser = createUserWorker();
-            workerUsers.push(newUser);
-            saveArray();
-            verfi.innerHTML="New account created successfully";
-            verfi.style.color="green";
+            verfi.innerHTML="Password already in use";
+            verfi.style.color="red";
         }
-        else if(ownerType.checked === true)
+        else if(!isValidPassword)
         {
-            const newUser = createUserOwner();
-            ownerUsers.push(newUser);
-            saveArray();
-            verfi.innerHTML="New account created successfully";
-            verfi.style.color="green";
+            verfi.innerHTML="Password must match requirements";
+            verfi.style.color="red";
         }
-        else{
-            console.log("Not all information is inputted");
+        else 
+        {
+            if(workerType.checked === true)
+            {
+                const newUser = createUserWorker();
+                workerUsers.push(newUser);
+                saveArray();
+                verfi.innerHTML="New account created successfully";
+                verfi.style.color="green";
+            }
+            else if(ownerType.checked === true)
+            {
+                const newUser = createUserOwner();
+                ownerUsers.push(newUser);
+                saveArray();
+                verfi.innerHTML="New account created successfully";
+                verfi.style.color="green";
+            }
+            else
+            {
+                console.log("Not all information is inputted");
+            }
         }
     }
     
