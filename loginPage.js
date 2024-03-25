@@ -40,6 +40,10 @@ function login(userType) {
         if (foundUser) {
             checkElement.innerHTML = "Login Successful!";
             checkElement.style.color = "green";
+
+            // Save userType in local storage
+            localStorage.setItem('userType', userType);
+
             setTimeout(function() {
                 window.location.href = 'homepage.html';
             }, 3000);
@@ -49,6 +53,7 @@ function login(userType) {
         }
     };
 }
+
 
 // Event listeners for login forms
 document.getElementById('owner').addEventListener('submit', login('Owner'));
