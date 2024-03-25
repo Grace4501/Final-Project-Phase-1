@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search and Filter</title>
+  <link rel="stylesheet"  href="prprty search.css">
+  
+</head>
+<body>
+
+<header>
+  <h6 align="left">Logo</h6>
+  <h2 style="flex-grow: 1;">Find Properties</h2>
+  <div class="header-right">
+    <h6 style="margin-right: 10px;">Notifications</h6>
+    <div class="dropdown filter-dropdown">
+      <button class="dropbtn">Dropdown &#9660;</button>
+      <div class="dropdown-content filter-options">
+        <a href="#" id="Home">Home</a>
+        <a href="#" id="Login/Profile">Login/Profile</a>
+        <a href="#" id="Settings">Settings</a>
+        
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <input type="text" id="searchInput" placeholder="Search...">
+  <button onclick="toggleFilters()">Filter</button>
+  <div id="filterOptions" class="filter-options">
+    <select id="filterSelect">
+      <option value="Price">Price</option>
+      <option value="Availability">Availability</option>
+      <option value="Rating">Rating</option>
+     
+    </select>
+  </div>
+  <button onclick="search()">Search</button>
+</div>
+
+<div id="searchResults" class="container"></div>
+
+
+<script src="prprtysrch.js"></script>
+</body>
+</html>
