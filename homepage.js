@@ -1,7 +1,7 @@
 window.onload = function() {
     // Add event listener to logo button
     document.querySelector('.logo-button').addEventListener('click', function() {
-        window.location.href = '/'; // Redirects to the homepage when the logo is clicked
+        window.location.href = 'homepage.html'; // Redirects to the homepage when the logo is clicked
     });
 
     // Add event listener to dropdown button

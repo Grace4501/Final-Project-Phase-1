@@ -126,9 +126,10 @@ function updateWorker() {
 
 // Function to display the profile picture
 function displayProfilePicture(profilePicture) {
-    const defaultPictureUrl = 'default-profile-pic.png';
-    
-    if (profilePicture) {
+    const defaultPictureUrl = 'default-profile-pic.jpg';
+
+    // Check if profilePicture is valid and is an instance of Blob
+    if (profilePicture instanceof Blob) {
         const reader = new FileReader();
         reader.onload = function(event) {
             const profilePictureContainer = document.getElementById('profilePictureContainer');
@@ -136,11 +137,12 @@ function displayProfilePicture(profilePicture) {
         };
         reader.readAsDataURL(profilePicture);
     } else {
-        // If no profile picture is provided, display the default picture
+        // If profilePicture is not a Blob or is invalid, display the default picture
         const profilePictureContainer = document.getElementById('profilePictureContainer');
         profilePictureContainer.innerHTML = `<img id="profilePicture" src="${defaultPictureUrl}" alt="Default Profile Picture">`;
     }
 }
+
 
 // Function to retrieve the user information from localStorage
 function retrieveUserFromStorage() {
@@ -173,3 +175,27 @@ function displayCurrentUserInfo(user) {
 
 // Assuming you have a button with an ID "showUpdateButton" to display the update form
 document.getElementById('showUpdateButton').addEventListener('click', displayUpdateFields);
+window.onload = function() {
+    // Add event listener to logo button
+    document.querySelector('.logo-button').addEventListener('click', function() {
+        window.location.href = 'homepage.html'; // Redirects to the homepage when the logo is clicked
+    });
+}
+
+// Add event listener to dropdown button
+document.querySelector('.dropdown-button').addEventListener('click', function() {
+    this.nextElementSibling.classList.toggle('show'); // Toggles the visibility of the dropdown menu
+});
+
+// Close the dropdown menu if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.dropdown-button')) {
+        var dropdowns = document.getElementsByClassName('dropdown-content');
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+});

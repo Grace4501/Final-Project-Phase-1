@@ -58,7 +58,7 @@ document.getElementById('coworker').addEventListener('submit', function(event) {
         checkWorker.innerHTML = "Login Successful!";
         checkWorker.style.color = "green";
         setTimeout(function() {
-            window.location.href = 'profileWorker.html'; //placeholder until homepage is made
+            window.location.href = 'homepage.html'; //placeholder until homepage is made
         }, 3000);
     } else {
         checkWorker.innerHTML = "Login Failed";
@@ -79,7 +79,7 @@ document.getElementById('owner').addEventListener('submit', function(event) {
         checkOwner.innerHTML = "Login Successful!";
         checkOwner.style.color = "green";
         setTimeout(function() {
-            window.location.href = 'profileOwner.html'; //placeholder until homepage is made
+            window.location.href = 'homepage.html'; //placeholder until homepage is made
         }, 3000);
     } else {
         checkOwner.innerHTML = "Login Failed";
@@ -192,4 +192,3 @@ document.getElementById("owner").addEventListener("submit", function(event) {
         console.log("error");
     }
 });
-

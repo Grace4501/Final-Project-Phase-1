@@ -6,16 +6,57 @@
     <title>Profile</title>
 </head>
 <body>
-    <header>
-        <h1>PROFILE</h1>
-    </header>
-    <main>
-        <h2 id="name"></h2>
-        <h2 id="address"></h2>
-        <h2 id="email"></h2>
-        <h2 id="contact"></h2>
-        <h4>Update Information?</h4>
-    </main>
+    <button class="logo-button">Logo</button>
+
+    <h1>PROFILE</h1>
+
+    <button class="notification button">NOTIFICATION</button>
+        <div class="dropdown">
+            
+            <button class="dropdown-button">Dropdown Menu</button>
+            
+            <div class="dropdown-content">
+                <a href="homepage.html">Home</a>
+                <a href="index.html">Login/Profile</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+
+        <button id="newPropertyButton">New Property</button>
+
+    <div id="profilePictureContainer">
+        <img id="profilePicture" src="#" alt="Profile Picture">
+    </div>    
+
+    <div id="info">
+        <h3 id="currentName"></h3>
+        <h3 id="currentAddress"></h3>
+        <h3 id="currentEmail"></h3>
+        <h3 id="currentContact"></h3>
+    </div>
+
+    <button id="showUpdateButton">Update Information?</button>
+    <form id="updateForm"></form>
+
+    <h2>Listed Properties</h2>
+    <div id="newPropertySection" style="display: none;">
+        <label for="placeName">Name:</label>
+        <input type="text" id="placeName"><br><br>
+        
+        <label for="placeAddress">Address:</label>
+        <input type="text" id="placeAddress"><br><br>
+
+        <label for="description">Description:</label>
+        <input type="text" id="description"><br><br>
+
+        <label for="picture">Picture:</label>
+        <input type="file" id="picture" accept="image/*"><br><br>
+
+        <button id="addPropertyButton">Add Property</button>
+    </div>
+
+    <div id="propertyContainer"></div>
+
     <script src="profileOwner.js"></script>
 </body>
 </html>
