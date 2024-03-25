@@ -7,23 +7,10 @@
     <link rel="stylesheet" href="ceate acc.css">
 </head>
 <body>
-    <head>
+    <header>
         <h1>CREATE AN ACCOUNT</h1>
-    </head>
+    </header>
     <main>
-        <label>NAME</label>
-        <input type="text" id="name">
-        <br>
-        <label>ADDRESS</label>
-        <input type="text" id="address">
-        <br>
-        <label>EMAIL</label>
-        <input type="text" id="email">
-        <br>
-        <label>CONTACT NUMBER</label>
-        <input type="text" id="contact">
-        <br>
-        <br>
         <label>USERNAME</label>
         <input type="text" id="username">
         <br>
@@ -33,20 +20,20 @@
         <br>
         <br>
         <section>
-        <div>
-            <label>Co-worker</label>
-            <input type="radio" id="worker" name="userType">
+            <div>
+                <label>Co-worker</label>
+                <input type="radio" id="worker" name="userType">
+                <br>
+                <label>Owner</label>
+                <input type="radio" id="owner" name="userType">
+            </div>
             <br>
-            <label>Owner</label>
-            <input type="radio" id="owner" name="userType">
-        </div>
-        <br>
-        <h3 id="verification"></h3>
-        <br>
-        <input type="submit" onclick="checkUser()">
+            <h3 id="verification"></h3>
+            <br>
+            <input type="submit" onclick="checkUser()">
 
-        <a href="index.html"><h4>Return to Login Page</h4></a>
-
+            <a href="index.html"><h4>Return to Login Page</h4></a>
+        </section>
     </main>
     <script src="loginPage.js"></script>
 </body>
