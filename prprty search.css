@@ -62,7 +62,7 @@
       position: relative;
       display: inline-block;
       margin-left: -10px; 
-      text-align: right;
+      text-align: center;
     }
     .header-right {
       text-align: right;
@@ -75,7 +75,7 @@
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
       top: 100%;
-      left: 0;
+      right: 0;
       max-height: calc(100vh-100px);
       overflow-y: white;
     }

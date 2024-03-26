@@ -130,3 +130,29 @@ window.addEventListener('click', function(event) {
         }
     }
 });
+
+
+//dropdown Behaviour
+
+let dropdownTimeout;
+
+document.querySelector('.dropdown').addEventListener('mouseenter', () => {
+    clearTimeout(dropdownTimeout);
+    document.querySelector('.dropdown-content').classList.add('show');
+});
+
+document.querySelector('.dropdown').addEventListener('mouseleave', () => {
+    dropdownTimeout = setTimeout(() => {
+        document.querySelector('.dropdown-content').classList.remove('show');
+    }, 1000); // Adjust the timeout duration as needed (in milliseconds)
+});
+
+document.querySelector('.dropdown-content').addEventListener('mouseenter', () => {
+    clearTimeout(dropdownTimeout);
+});
+
+document.querySelector('.dropdown-content').addEventListener('mouseleave', () => {
+    dropdownTimeout = setTimeout(() => {
+        document.querySelector('.dropdown-content').classList.remove('show');
+    }, 1000); // Adjust the timeout duration to match the dropdown delay
+});
