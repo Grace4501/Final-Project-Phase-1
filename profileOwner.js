@@ -49,7 +49,6 @@ function updateOwner() {
     const updatedEmail = document.getElementById('updateEmail').value;
     const updatedContact = document.getElementById('updateContact').value;
 
-    // Get the selected profile picture
     const updatedProfilePicture = document.getElementById('updateProfilePicture').files[0];
 
     if (ownerUsers.length > 0) {

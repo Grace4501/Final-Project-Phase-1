@@ -133,3 +133,10 @@ button:hover {
     max-width: 60%;
     height: auto;
   }
+
+  #propertyContainer {
+    padding: 5%;
+    align-items: left;
+    text-align: left;
+    max-width: 80%;
+  }

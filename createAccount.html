@@ -11,14 +11,24 @@
         <h1>CREATE AN ACCOUNT</h1>
     </header>
     <main>
+        <label>NAME</label>
+        <input type="text" id="name">
+        <br>
+        <label>ADDRESS</label>
+        <input type="text" id="address">
+        <br>
+        <label>EMAIL</label>
+        <input type="text" id="email">
+        <br>
+        <label>CONTACT</label>
+        <input type="text" id="contact">
+        <br>
         <label>USERNAME</label>
         <input type="text" id="username">
         <br>
         <label>PASSWORD</label>
         <input type="text" id="password">
         <h5>Password must have a minimum of 5 characters and 1 number</h5>
-        <br>
-        <br>
         <section>
             <div>
                 <label>Co-worker</label>
@@ -27,7 +37,6 @@
                 <label>Owner</label>
                 <input type="radio" id="owner" name="userType">
             </div>
-            <br>
             <h3 id="verification"></h3>
             <br>
             <input type="submit" onclick="checkUser()">
