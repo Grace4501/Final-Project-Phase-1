@@ -152,10 +152,14 @@ class Properties {
             <p><strong>Address:</strong> ${this.placeaddress}</p>
             <p><strong>Description:</strong> ${this.description}</p>
         `;
-        if (this.propertyPicture) {
-            propertyInfo.innerHTML += `<img src="${URL.createObjectURL(this.propertyPicture)}" alt="Property Picture">`;
+    
+        if (this.propertyPicture instanceof Blob) {
+            const imageUrl = URL.createObjectURL(this.propertyPicture);
+            propertyInfo.innerHTML += `<img src="${imageUrl}" alt="Property Picture">`;
+        } else {
+            console.error('Invalid property picture:', this.propertyPicture);
         }
-        
+    
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove Property';
         removeButton.addEventListener('click', () => {
@@ -163,10 +167,42 @@ class Properties {
             removePropertyFromLocal(this.index);
         });
         propertyInfo.appendChild(removeButton);
-        
+    
         container.appendChild(propertyInfo);
     }
+}    
+
+document.addEventListener('DOMContentLoaded', function() {
+    const newPropertyButton = document.getElementById('newPropertyButton');
+    if (newPropertyButton) {
+        newPropertyButton.addEventListener('click', showNewPropertySection);
+    } else {
+        console.error('Element with ID "newPropertyButton" not found.');
+    }
+});
+
+function showNewPropertySection() {
+    document.getElementById('newPropertySection').style.display = 'block';
 }
+
+function addProperty() {
+    console.log("Add Property button clicked"); // Debugging statement
+    const placeName = document.getElementById('placeName').value;
+    const placeAddress = document.getElementById('placeAddress').value;
+    const description = document.getElementById('description').value;
+    const picture = document.getElementById('picture').files[0];
+
+    console.log("Values:", placeName, placeAddress, description, picture); // Debugging statement
+
+    const newProperty = new Properties(placeName, placeAddress, description);
+    newProperty.updatePropertyPicture(picture);
+    
+    savePropertyToLocal(newProperty);
+    newProperty.displayPropertyInfoInDOM('propertyContainer');
+    document.getElementById('newPropertySection').style.display = 'none';
+}
+
+document.getElementById('addPropertyButton').addEventListener('click', addProperty);
 
 function showNewPropertySection() {
     document.getElementById('newPropertySection').style.display = 'block';

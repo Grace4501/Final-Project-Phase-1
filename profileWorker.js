@@ -76,7 +76,6 @@ function updateWorker() {
 function displayProfilePicture(profilePicture) {
     const defaultPictureUrl = 'default-profile-pic.jpg';
     const profilePictureContainer = document.getElementById('profilePictureContainer');
-
     if (profilePicture instanceof Blob) {
         const reader = new FileReader();
         reader.onload = function(event) {
@@ -131,6 +130,10 @@ window.addEventListener('click', function(event) {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    displayProfilePicture(null);
+});
+
 
 //dropdown Behaviour
 
@@ -154,5 +157,5 @@ document.querySelector('.dropdown-content').addEventListener('mouseenter', () =>
 document.querySelector('.dropdown-content').addEventListener('mouseleave', () => {
     dropdownTimeout = setTimeout(() => {
         document.querySelector('.dropdown-content').classList.remove('show');
-    }, 1000); // Adjust the timeout duration to match the dropdown delay
+    }, 1000);
 });

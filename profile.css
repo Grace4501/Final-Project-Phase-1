@@ -17,7 +17,6 @@ h1 {
     border-radius: 50%;
 }
 
-
 #newPropertySection {
     display: none;
 }
@@ -128,4 +127,9 @@ button:hover {
 
   .newPropertyButton {
     margin-right: 3px;
+  }
+
+  .picture {
+    max-width: 60%;
+    height: auto;
   }
